@@ -62,8 +62,15 @@ public class PlataformaCursos
      *
      */
     public int totalCursosEn(String categoria) {
-
-        return 0;
+         int  total = 0;
+         ArrayList<Curso> cursos = new ArrayList<>();
+         if(cursos.contains(categoria)){
+           total++;
+            }
+         else{
+             return -1;
+         }
+        return total;
     }
 
     /**
@@ -76,119 +83,119 @@ public class PlataformaCursos
      * Usar el conjunto de entradas y un iterador
      */
     public String toString() {
-
+        Iterator<>
         return "";
     }
-    /**
-     * Mostrar la plataforma
-     */
-    public void escribir() {
+    // /**
+     // * Mostrar la plataforma
+     // */
+    // public void escribir() {
 
-        System.out.println(this.toString());
-    }
+        // System.out.println(this.toString());
+    // }
 
-    /**
-     *  Lee de un fichero de texto la información de los cursos
-     *  En cada línea del fichero se guarda la información de un curso
-     *  con el formato "categoria:nombre:fecha publicacion:nivel"
-     *  
-     */
-    public void leerDeFichero() {
+    // /**
+     // *  Lee de un fichero de texto la información de los cursos
+     // *  En cada línea del fichero se guarda la información de un curso
+     // *  con el formato "categoria:nombre:fecha publicacion:nivel"
+     // *  
+     // */
+    // public void leerDeFichero() {
 
-        Scanner sc = new Scanner(
-                this.getClass().getResourceAsStream("/cursos.csv"));
-        while (sc.hasNextLine())  {
-            String lineaCurso = sc.nextLine().trim();
-            int p = lineaCurso.indexOf(SEPARADOR);
-            String categoria = lineaCurso.substring(0, p).trim();
-            Curso curso = obtenerCurso(lineaCurso.substring(p + 1));
-            this.addCurso(categoria, curso);
-        }
+        // Scanner sc = new Scanner(
+                // this.getClass().getResourceAsStream("/cursos.csv"));
+        // while (sc.hasNextLine())  {
+            // String lineaCurso = sc.nextLine().trim();
+            // int p = lineaCurso.indexOf(SEPARADOR);
+            // String categoria = lineaCurso.substring(0, p).trim();
+            // Curso curso = obtenerCurso(lineaCurso.substring(p + 1));
+            // this.addCurso(categoria, curso);
+        // }
 
-    }
+    // }
 
-    /**
-     *  Dado un String con los datos de un curso
-     *  obtiene y devuelve un objeto Curso
-     *
-     *  Ej. a partir de  "sql essential training: 3/12/2019 : principiante " 
-     *  obtiene el objeto Curso correspondiente
-     *  
-     *  Asumimos todos los valores correctos aunque puede haber 
-     *  espacios antes y después de cada dato
-     */
-    private Curso obtenerCurso(String lineaCurso) {
+    // /**
+     // *  Dado un String con los datos de un curso
+     // *  obtiene y devuelve un objeto Curso
+     // *
+     // *  Ej. a partir de  "sql essential training: 3/12/2019 : principiante " 
+     // *  obtiene el objeto Curso correspondiente
+     // *  
+     // *  Asumimos todos los valores correctos aunque puede haber 
+     // *  espacios antes y después de cada dato
+     // */
+    // private Curso obtenerCurso(String lineaCurso) {
 
-        return null;
-    }
-    /**
-     * devuelve un nuevo conjunto con los nombres de todas las categorías  
-     *  
-     */
-    public TreeSet<String> obtenerCategorias() {
+        // return null;
+    // }
+    // /**
+     // * devuelve un nuevo conjunto con los nombres de todas las categorías  
+     // *  
+     // */
+    // public TreeSet<String> obtenerCategorias() {
 
-        return null;
+        // return null;
 
-    }
+    // }
 
-    /**
-     * borra de la plataforma los cursos de la categoría y nivel indicados
-     * Se devuelve un conjunto (importa el orden) con los nombres de los cursos borrados 
-     * 
-     * Asumimos que existe la categoría
-     *  
-     */
+    // /**
+     // * borra de la plataforma los cursos de la categoría y nivel indicados
+     // * Se devuelve un conjunto (importa el orden) con los nombres de los cursos borrados 
+     // * 
+     // * Asumimos que existe la categoría
+     // *  
+     // */
 
-    public      borrarCursosDe(String categoria, Nivel nivel) {
+    // public      borrarCursosDe(String categoria, Nivel nivel) {
 
-        return null;
-    }
-    /**
-     *   Devuelve el nombre del curso más antiguo en la
-     *   plataforma (el primero publicado)
-     */
+        // return null;
+    // }
+    // /**
+     // *   Devuelve el nombre del curso más antiguo en la
+     // *   plataforma (el primero publicado)
+     // */
 
-    public String cursoMasAntiguo() {
+    // public String cursoMasAntiguo() {
 
 
-        return "";
-    }
+        // return "";
+    // }
 
-    /**
-     *  
-     */
-    public static void main(String[] args) {
+    // /**
+     // *  
+     // */
+    // public static void main(String[] args) {
 
-        PlataformaCursos plataforma = new PlataformaCursos();
-        plataforma.leerDeFichero();
-        plataforma.escribir();
+        // PlataformaCursos plataforma = new PlataformaCursos();
+        // plataforma.leerDeFichero();
+        // plataforma.escribir();
 
-        System.out.println(
-            "Curso más antiguo: " + plataforma.cursoMasAntiguo()
-            + "\n");
+        // System.out.println(
+            // "Curso más antiguo: " + plataforma.cursoMasAntiguo()
+            // + "\n");
 
-        String categoria = "bases de datos";
-        Nivel nivel = Nivel.AVANZADO;
-        System.out.println("------------------");
-        System.out.println(
-            "Borrando cursos de " + categoria.toUpperCase()
-            + " y nivel "
-            + nivel);
-        TreeSet<String> borrados = plataforma.borrarCursosDe(categoria, nivel);
+        // String categoria = "bases de datos";
+        // Nivel nivel = Nivel.AVANZADO;
+        // System.out.println("------------------");
+        // System.out.println(
+            // "Borrando cursos de " + categoria.toUpperCase()
+            // + " y nivel "
+            // + nivel);
+        // TreeSet<String> borrados = plataforma.borrarCursosDe(categoria, nivel);
 
-        System.out.println("Borrados " + " = " + borrados.toString() + "\n");
-        categoria = "cms";
-        nivel = Nivel.INTERMEDIO;
-        System.out.println(
-            "Borrando cursos de " + categoria.toUpperCase()
-            + " y nivel "
-            + nivel);
-        borrados = plataforma.borrarCursosDe(categoria, nivel);
-        System.out.println("Borrados " + " = " + borrados.toString() + "\n");
-        System.out.println("------------------\n");
-        System.out.println(
-            "Después de borrar ....");
-        plataforma.escribir();
+        // System.out.println("Borrados " + " = " + borrados.toString() + "\n");
+        // categoria = "cms";
+        // nivel = Nivel.INTERMEDIO;
+        // System.out.println(
+            // "Borrando cursos de " + categoria.toUpperCase()
+            // + " y nivel "
+            // + nivel);
+        // borrados = plataforma.borrarCursosDe(categoria, nivel);
+        // System.out.println("Borrados " + " = " + borrados.toString() + "\n");
+        // System.out.println("------------------\n");
+        // System.out.println(
+            // "Después de borrar ....");
+        // plataforma.escribir();
 
-    }
+    // }
 }
